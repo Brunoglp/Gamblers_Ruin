@@ -1,20 +1,29 @@
 import random
 
-def bet():
-    coins = 50 # Fichas al comienzo
+def bet(coins, bets):
     cont = 0 # Contador
-    while coins > 0:
-        cont += 1
-        coins -= 1 # Le resta 1 porque estoy gastando una ficha
+    while coins > 0 and cont < bets:
+
         n = random.randrange(11) # Randomizer con probabilidad del 40%
         if 0 < n < 4:
-            coins += 2
+            coins += 1
         else:
             coins -= 1
-        if cont == 300: # Para testear que funciona, se baja este IF de contador (a 10 por ejemplo)
-            print(f'Le quedan {coins} fichas')
-    print(f'Su noche de apuestas terminó')
 
-bet()
+        print(f'Le quedan {coins} fichas')
 
-# bug: si gano me imprime los dos prints (15;16)
+        cont += 1
+
+    print(f'Su noche de apuestas terminó con {cont} apuestas')
+    return cont, coins
+        
+
+result_coins = 0
+for x in range(0, 20):
+    result_coins += bet(50, 300)[1]
+mid_value = result_coins / 20
+
+result = bet( 50, 300 )
+
+print(f'El valor medio de la cantidad de apuestas final es de {mid_value}')
+print(f'Apostaste {result[0]} veces y te quedaste con un total de {result[1]} fichas')
