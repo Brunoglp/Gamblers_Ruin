@@ -6,7 +6,7 @@ def bet():
     while coins > 0:
         cont += 1
         coins -= 1 # Le resta 1 porque estoy gastando una ficha
-        n = random.randrange(11) # Randomizer con probabilidad del 40%
+        n = random.randrange(10) # Randomizer con probabilidad del 40%
         if 0 < n < 4:
             coins += 2
         else:
