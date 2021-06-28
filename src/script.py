@@ -13,7 +13,7 @@ def bet():
             coins -= 1
         if cont == 300: # Para testear que funciona, se baja este IF de contador (a 10 por ejemplo)
             print(f'Le quedan {coins} fichas')
-    print(f'Su noche de apuestas terminó')
+    print(f'Su noche de apuestas terminó! Ha realizado {cont} apuestas')
 
 bet()
 
