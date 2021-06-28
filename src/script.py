@@ -15,6 +15,7 @@ def bet():
             print(f'Le quedan {coins} fichas')
     print(f'Su noche de apuestas terminó! Ha realizado {cont} apuestas')
 
-bet()
+for i in range(1,21):
+    bet()
 
 # bug: si gano me imprime los dos prints (15;16)
